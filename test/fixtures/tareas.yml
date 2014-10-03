@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion: MyText
+  tiempo_limite: 2014-10-02 17:08:19
+  complejidad: 1
+  puntuacion: 1
+
+two:
+  descripcion: MyText
+  tiempo_limite: 2014-10-02 17:08:19
+  complejidad: 1
+  puntuacion: 1

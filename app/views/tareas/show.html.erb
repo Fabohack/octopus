@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @tarea.descripcion %>
+</p>
+
+<p>
+  <strong>Tiempo limite:</strong>
+  <%= @tarea.tiempo_limite %>
+</p>
+
+<p>
+  <strong>Complejidad:</strong>
+  <%= @tarea.complejidad %>
+</p>
+
+<p>
+  <strong>Puntuacion:</strong>
+  <%= @tarea.puntuacion %>
+</p>
+
+<%= link_to 'Edit', edit_tarea_path(@tarea) %> |
+<%= link_to 'Back', tareas_path %>
