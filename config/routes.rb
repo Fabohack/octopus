@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   resources :tareas
 
-  root to: 'visitors#index'
-  devise_for :users
+  root to: 'proyectos#index'
+#  root to: 'visitors#index'
+  devise_for :users 
   resources :users
 end
