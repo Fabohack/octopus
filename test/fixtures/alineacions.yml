@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  objetivo_id: 
+  proyecto_id: 
+
+two:
+  objetivo_id: 
+  proyecto_id: 

@@ -11,9 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141003132221) do
+ActiveRecord::Schema.define(version: 20141003180336) do
 
-  create_table "proyecto_users", force: true do |t|
+  create_table "alineacions", force: true do |t|
+    t.integer  "objetivo_id"
+    t.integer  "proyecto_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "alineacions", ["objetivo_id"], name: "index_alineacions_on_objetivo_id"
+  add_index "alineacions", ["proyecto_id"], name: "index_alineacions_on_proyecto_id"
+
+  create_table "membresia", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "proyecto_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "membresia", ["proyecto_id"], name: "index_membresia_on_proyecto_id"
+  add_index "membresia", ["user_id"], name: "index_membresia_on_user_id"
+
+  create_table "objetivos", force: true do |t|
+    t.text     "nombre_objetivo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,6 +55,7 @@ ActiveRecord::Schema.define(version: 20141003132221) do
     t.integer  "puntuacion"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "usuario_id"
   end
 
   create_table "users", force: true do |t|
