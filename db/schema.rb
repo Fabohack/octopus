@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141003180336) do
+ActiveRecord::Schema.define(version: 20141006170148) do
 
   create_table "alineacions", force: true do |t|
     t.integer  "objetivo_id"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 20141003180336) do
 
   create_table "objetivos", force: true do |t|
     t.text     "nombre_objetivo"
+    t.integer  "organizacion_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "objetivos", ["organizacion_id", "created_at"], name: "index_objetivos_on_organizacion_id_and_created_at"
+  add_index "objetivos", ["organizacion_id"], name: "index_objetivos_on_organizacion_id"
+
+  create_table "organizacions", force: true do |t|
+    t.string   "nombre_organizacion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

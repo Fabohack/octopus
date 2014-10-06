@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_objetivo: MyText
+  organizacion_id: 
+
+two:
+  nombre_objetivo: MyText
+  organizacion_id: 
