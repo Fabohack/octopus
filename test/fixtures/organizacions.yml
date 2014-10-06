@@ -1,7 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  nombre_organizacion: MyString
+sistemas:
+  nombre_organizacion: 'sistemas'
 
-two:
-  nombre_organizacion: MyString

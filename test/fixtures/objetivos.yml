@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  nombre_objetivo: MyText
-  organizacion_id: 
+primer_objetivo:
+  nombre_objetivo: Este es el objetivo 1
+  created_at: <%= 10.minutes.ago %> 
 
-two:
-  nombre_objetivo: MyText
-  organizacion_id: 
+segundo_objetivo:
+  nombre_objetivo: Este es el objetivo 2
+  created_at: <%= 2.years.ago %>
+
+reciente:
+  nombre_objetivo: Este es el objetivo 3
+  created_at: <%= Time.zone.now %>
