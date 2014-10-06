@@ -3,11 +3,21 @@
 primer_objetivo:
   nombre_objetivo: Este es el objetivo 1
   created_at: <%= 10.minutes.ago %> 
+  organizacion: sistemas
 
 segundo_objetivo:
   nombre_objetivo: Este es el objetivo 2
   created_at: <%= 2.years.ago %>
+  organizacion: sistemas
 
 reciente:
   nombre_objetivo: Este es el objetivo 3
   created_at: <%= Time.zone.now %>
+  organizacion: sistemas
+
+<% 30.times do |n| %>
+objetivo_<%= n %>:
+  nombre_objetivo: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 40.days.ago %>
+  organizacion: sistemas
+<% end %>

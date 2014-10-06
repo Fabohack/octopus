@@ -1,0 +1,7 @@
+<li id="objetivo-<%= objetivo.id %>">
+	<span class="organizacion"><%= link_to objetivo.organizacion.nombre_organizacion, objetivo.organizacion %></span>
+	<span class="content"><%= objetivo.nombre_objetivo %></span>
+	<span class="timestamp">
+		Publicado hace: <%= time_ago_in_words(objetivo.created_at) %> .
+	</span>
+</li>

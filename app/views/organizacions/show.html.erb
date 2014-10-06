@@ -1,0 +1,19 @@
+<% provide(:title, @organizacion.nombre_organizacion) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @organizacion.nombre_organizacion %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @organizacion.objetivos.any? %>
+      <h3>Objetivos Estratégicos (<%= @organizacion.objetivos.count %>)</h3>
+      <ol class="objetivos">
+        <%= render @objetivos %>
+      </ol>
+      <%= will_paginate @objetivos %>
+    <% end %>
+  </div>
+</div>
