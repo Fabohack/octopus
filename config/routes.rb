@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :objetivos
-
   resources :proyectos
 
   resources :tareas
