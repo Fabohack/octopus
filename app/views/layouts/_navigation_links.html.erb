@@ -1,34 +1,28 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
-<li> <i class="icon-file"></i>
-	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Inicio<b class="caret"></b></a>
-	<ul class="dropdown-menu">
-		<li><%= link_to 'Proyectos', proyectos_path %></li>
-		<li><%= link_to 'Tareas', tareas_path %></li>
-
-		
-		<li class="divider"></li>
-		<li><%= link_to 'Salir', destroy_user_session_path, :method=>'delete' %></li>
-	</ul>
-	<li><%= link_to 'Proyectos', proyectos_path %></li>
-</li>
-
-
+    <li> <i class="icon-file"></i>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inicio<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><%= link_to 'Proyectos', proyectos_path %></li>
+            <li><%= link_to 'Tareas', tareas_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Salir', destroy_user_session_path, :method=>'delete' %></li>
+        </ul>
+        <li><%= link_to 'Proyectos', proyectos_path %></li>
+    </li>
+    <ul class="nav navbar-nav navbar-right">
+      <li> <i class="icon-file"></i>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administracion<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <% if current_user.admin? %>
+              <li><%= link_to 'Usuarios', users_path %></li>
+          <% end %>
+          <li class="divider"></li>
+          <li><%= link_to 'Editar Cuenta', edit_user_registration_path %></li>
+        </ul>
+      </li>
+    </ul>
 <% else %>
   <li><%= link_to 'Ingresar', new_user_session_path %></li>
   <li><%= link_to 'Registrarse', new_user_registration_path %></li>
-<% end %>
-<% if user_signed_in? %>
-	<ul class="nav navbar-nav navbar-right">
-		<li> <i class="icon-file"></i>
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Administracion<b class="caret"></b></a>
-			<ul class="dropdown-menu">
-				<% if current_user.admin? %>
-					<li><%= link_to 'Usuarios', users_path %></li>
-				<% end %>
-				<li class="divider"></li>
-				<li><%= link_to 'Editar Cuenta', edit_user_registration_path %></li>
-			</ul>
-		</li>			
-	</ul>
 <% end %>
