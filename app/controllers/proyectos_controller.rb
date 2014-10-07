@@ -9,18 +9,18 @@ class ProyectosController < ApplicationController
     #if current_user.role == 2
     #  @proyectos = Proyecto.all
     #else
-    #  @proyectos = current_user.proyectos
-    #  if @proyectos.count == 1
-    #    redirecting = 1
-    #    redirect_to proyecto_path(@proyectos.first)
-    #  end
+     # @proyectos = current_user.proyectos
+      if @proyectos.count == 1
+          redirecting = 1
+          redirect_to proyecto_path(@proyectos.first)
+      end
     #end
-    #if redirecting.nil?
-    #  respond_to do |format|
-    #    format.html # index.html.erb
-    #    format.json { render json: @proyectos }
-    #  end
-    #end
+    if redirecting.nil?
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @proyectos }
+      end
+    end
   end
 
   # GET /proyectos/1

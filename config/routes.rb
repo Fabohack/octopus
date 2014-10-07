@@ -1,16 +1,14 @@
 Octopus::Application.routes.draw do
 
-  #root       'paginas_estaticas#Inicio'
   root :to => "proyectos#index"
   get 'Ayuda'    => 'paginas_estaticas#Ayuda'
 
-  resources :objetivos
   resources :tareas
 
   resources :proyectos do
     resources :membresias
-    #get ':status', :to => "proyectos#show", :as => "tareas"
-    #get 'proyectos' => "proyectos#show"
+    get ':condicion', :to => "proyectos#show", :as => "condicion_tarea"
+    resources :tareas
 
   end
 

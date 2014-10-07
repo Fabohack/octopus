@@ -1,24 +1,14 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @proyecto.nombre %>
-</p>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @proyecto.descripcion %>
-</p>
+<div class="proyecto_header">
+  <h1><%=link_to @proyecto.nombre, @proyecto %>
+  </h1>
+  <%= link_to "Nueva Tarea", new_proyecto_tarea_path(@proyecto), :class => "btn primary" %>
+</div>
+<div class="clear"></div>
+<div class="project_nav">
 
-<p>
-  <strong>Presupuesto:</strong>
-  <%= @proyecto.presupuesto %>
-</p>
+</div>
+<%= render :template => 'tareas/index' %>
 
-<p>
-  <strong>Es estrategico:</strong>
-  <%= @proyecto.es_estrategico %>
-</p>
 
-<%= link_to 'Edit', edit_proyecto_path(@proyecto) %> |
-<%= link_to 'Back', proyectos_path %>
